@@ -195,7 +195,9 @@ def big_shoe_rebounds()
   rebounds = 0 
   player_with_max = ""
   game_hash.each do |team, attribute|
-    
+    attribute[:players].each do |player|
+      
+    end
   end
 end
 
