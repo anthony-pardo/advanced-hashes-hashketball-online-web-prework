@@ -224,6 +224,14 @@ def winning_team()
   game_hash[:home][:players].each do |player|
     nets_points += player[:points]
   end
+  game_hash[:away][:players].each do |player|
+    hornets_points += player[:points]
+  end
+  if nets_points > hornets_points
+    return "Brooklyn Nets"
+  else 
+    return "Charlotte Hornets"
+  end
 end
 
 
