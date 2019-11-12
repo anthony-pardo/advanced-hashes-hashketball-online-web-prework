@@ -250,16 +250,19 @@ end
 
 def long_name_steals_a_ton?() 
   most_steals = 0 
-  player_with_max_length = ""
+  bismacks_steals = 22
   game_hash.each do |team, attribute|
     attribute[:players].each do |player|
-      if player[:player_name].length > max_length
-        max_length = player[:player_name].length
-        player_with_max_length = player[:player_name]
+      if player[:steals] > most_steals
+        most_steals = player[:steals]
       end
     end
   end
-  player_with_max_length
+  if most_steals == bismacks_steals
+    return true 
+  else 
+    return false 
+  end 
 end
 
 
