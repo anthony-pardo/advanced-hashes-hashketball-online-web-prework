@@ -219,17 +219,11 @@ def most_points_scored()
 end
 
 def winning_team()
-  max_points = 0 
-  player_with_max = ""
-  game_hash.each do |team, attribute|
-    attribute[:players].each do |player|
-      if player[:points] > max_points
-        max_points = player[:points]
-        player_with_max = player[:player_name]
-      end
-    end
+  nets_points = 0 
+  hornets_points = 0 
+  game_hash[:home][:players].each do |player|
+    nets_points += player[:points]
   end
-  player_with_max
 end
 
 
